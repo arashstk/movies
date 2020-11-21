@@ -1,0 +1,13 @@
+<div *ngIf="!loading; else loading_div" class="card bg-dark text-white">
+  <img class="card-img" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{ movie.poster_path}}" alt="Card image">
+  <div class="card-img-overlay">
+    <h5 class="card-title">{{ movie.title }}</h5>
+    <p class="card-text">{{ movie.overview }}</p>
+    <p class="card-text">Published at: {{ movie.release_date }}</p>
+
+    <button class="btn btn-warning">{{ movie.vote_average }}</button>
+  </div>
+</div>
+
+
+<ng-template #loading_div>Loading movie info...</ng-template>

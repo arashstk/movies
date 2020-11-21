@@ -1,0 +1,20 @@
+
+<div class="card bg-info">You can find the popular movies here from TMDb site.</div>
+<div class="card bg-warning shadow-lm ">Enjoy</div>
+<hr>
+
+
+<div *ngIf="loading; else loading_div">Data is loading...</div>
+
+<ng-template #loading_div >
+  <div class="card-columns">
+    <div class="card" *ngFor="let item of trending">
+      <img class="card-img-top" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{ item.poster_path}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <p class="card-text">{{ item.overview }}</p>
+        <a routerLink="view/{{ item.id}}" class="btn btn-primary">View More</a>
+      </div>
+    </div>
+  </div>
+</ng-template>
